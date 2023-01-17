@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} Madlib Entries {% endblock %}
+
+{% block content %}
+<h2>Welcome to Madlibs</h2>
+<p>Put your entries in the form below to complete the story!</p>
+<br>
+<form action="/madlibs/story">
+    <p>But first please tell us your name! <input name="person"></p>
+    <br>
+    <!-- <label for="placea">Place:</label> -->
+    <!-- <input type="text" id="placea" name="placea"><br> -->
+
+    <!-- <label for="noun">Noun:</label> -->
+    <!-- <input type="text" id="noun" name="noun"><br> -->
+
+    <!-- <label for="verb">Verb:</label> -->
+    <!-- <input type="text" id="verb" name="verb"><br> -->
+
+    <!-- <label for="adjective">Adjective:</label> -->
+    <!-- <input type="text" id="adjective" name="adjective"><br> -->
+
+    <!-- <label for="plural_noun">Plural Noun:</label> -->
+    <!-- <input type="text" id="plural_noun" name="plural_noun"><br> -->
+
+    {% for prompt in prompts %}
+    <p>{{prompt}}:
+        <input name="{{ prompt }}">
+    </p>
+    {% endfor %}
+    <button>Submit</button>
+</form>
+
+
+<br>
+
+<!-- <input type="submit"> -->
+<!-- </form> -->
+
+
+{% endblock %}
